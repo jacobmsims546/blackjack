@@ -4,18 +4,19 @@ import random
 
 def title():
     print(""" 
-     _     _            _    _            _    
-    | |   | |          | |  (_)          | |   
-    | |__ | | __ _  ___| | ___  __ _  ___| | __
-    | '_ \| |/ _` |/ __| |/ / |/ _` |/ __| |/ /
-    | |_) | | (_| | (__|   <| | (_| | (__|   < 
-    |_.__/|_|\__,_|\___|_|\_\ |\__,_|\___|_|\_|
+     _      _            _    _            _    
+    | |    | |          | |  (_)          | |   
+    | |__  | | __ _  ___| | ___  __ _  ___| | __
+    | '_ \ | |/ _` |/ __| |/ / |/ _` |/ __| |/ /
+    | |_)  | | (_| | (__|   <| | (_| | (__|   < 
+    |_.__/ |_|\__,_|\___|_|\_\ |\__,_|\___|_|\_|
                            _/ |                
                           |__/  
       
-    A classic and thrilling game of chance.
+    A classic card game of chance.
+    Coded by Jacob Simmons (@jacobmsims546 on GitHub)
     Enter "start" to begin. Enter "rules" for an explanation of the rules.
-        """)
+    """)
 
 def start(terminalin):
     if terminalin == "rules":
@@ -507,8 +508,3 @@ def blackjack():
     new_game(cash_and_games)
 
 blackjack()
-
-
-
-
-            
