@@ -3,7 +3,7 @@
 import random
 
 def title():
-    print(""" 
+    print(r""" 
      _      _            _    _            _    
     | |    | |          | |  (_)          | |   
     | |__  | | __ _  ___| | ___  __ _  ___| | __
@@ -31,9 +31,12 @@ def start(terminalin):
 
             The player starts by making a bet on the next game.
             The player is then dealt a hand of two cards, while the dealer starts with a hand of one card.
+            If the player or the dealer has a two-card hand with a value of 21 (ten-valued card and an ace), it is considered a "blackjack". 
+            A blackjack beats any hand that is not a blackjack, even one with a value of 21.
 
             On their turn, the player may choose to "hit" (take a card and continue their turn), "stand" (end their turn without taking a card), "double" 
             (double their wager, take a single card, and end their turn), or "split" (only if the two cards in the starting hand have the same value, separate them to make two hands).
+            The player automatically loses if their hand exceeds a value of 21 during their turn (a bust).
               
             A player may only choose to double on their turn if they have not split, they have recieved two cards, and they have not chosen to hit yet.
 
@@ -42,15 +45,15 @@ def start(terminalin):
             In the case of cards worth 10 points, splitting is only allowed when the cards rank the same. For example, 10-10 could be split, but K-10 could not.
             Doubling and re-splitting after splitting once is not allowed. A 10-valued card and an ace resulting from a split isn't considered a blackjack (hand value of exactly 21).
 
-            Once the player is finished with their turn, the dealer resolves their hand by drawing until their hand total is 17 or above, or if they exceed 21 (a bust).
-            If the dealer busts, the player wins regardless of the value of their hand. 
-            If the value of the dealer's hand is closer to 21 than the player's, the dealer wins. 
+            Once the player is finished with their turn, the dealer resolves their hand by drawing until their minimum hand total is 17 or above, or if they exceed 21 (a bust).
+            If the dealer busts, the player wins regardless of the value of their hand, as long as the player has not also busted on their turn.
+            If neither the player or the dealer have busted, and the value of the dealer's hand is closer to 21 than the player's, the dealer wins. 
             The opposite is true if the player's hand is closer to 21 than the dealer's, resulting in a win for the player.
-            The player automatically loses if their hand exceeds a value of 21 during their turn (a bust).
-            In the case of a tie ("push" or "standoff"), bets are returned without adjustment. A blackjack beats any hand that is not a blackjack, even one with a value of 21.
-
+            
+            
+            In the case of a tie ("push" or "standoff"), bets are returned without adjustment.
             If the player wins the hand, they recieve money at a ratio of 3:2 of their bet for that round as winnings.
-            Upon a loss, the player loses the money that they have betted for that round.
+            Upon a loss, the player loses the money that they bet for that round.
             """)
         terminalin = input("---> ")
         start(terminalin)
